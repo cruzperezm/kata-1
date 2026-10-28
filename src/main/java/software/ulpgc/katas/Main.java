@@ -10,7 +10,8 @@ public class Main {
         Person[] people = new Person[]{person1, person2};
         for (Person person : people){
             String string = "Nombre: %s\nEdad: %d\nFecha de nacimiento:";
-            System.out.println(String.format(string + person.birthday() + "\nEs mayor de edad? %b", person.name(), person.age(), person.isOfAge()));
+            String mayor = (person.isOfAge()) ? "Sí" : "No";
+            System.out.println(String.format(string + person.birthday() + "\nEs mayor de edad? %s", person.name(), person.age(), mayor));
         }
     }
 }
