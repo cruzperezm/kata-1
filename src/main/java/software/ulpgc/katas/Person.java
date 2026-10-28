@@ -12,4 +12,7 @@ public record Person(String name, LocalDate birthday) {
     public int age() {
         return toYears(LocalDate.now().toEpochDay() - birthday.toEpochDay());
     }
+    public boolean isOfAge(){
+        return (this.age() >= 18) ? true : false;
+    }
 }

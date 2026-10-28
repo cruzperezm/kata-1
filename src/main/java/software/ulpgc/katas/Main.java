@@ -3,9 +3,14 @@ import java.time.LocalDate;
 
 public class Main {
     static void main() {
-        LocalDate birthday = LocalDate.of(2000, 1, 1);
-        Person person = new Person("Pablo", birthday);
-        String string = "Nombre: %s\nEdad: %d\nFecha de nacimiento: \"";
-        System.out.println(String.format(string + person.birthday(), person.name(), person.age()));
+        LocalDate birthday1 = LocalDate.of(2000, 1, 1);
+        Person person1 = new Person("Pablo", birthday1);
+        LocalDate birthday2 = LocalDate.of(2010, 1, 1);
+        Person person2 = new Person("Paula", birthday2);
+        Person[] people = new Person[]{person1, person2};
+        for (Person person : people){
+            String string = "Nombre: %s\nEdad: %d\nFecha de nacimiento:";
+            System.out.println(String.format(string + person.birthday() + "\nEs mayor de edad? %b", person.name(), person.age(), person.isOfAge()));
+        }
     }
 }
